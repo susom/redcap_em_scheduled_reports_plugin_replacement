@@ -1,63 +1,50 @@
 {
-    "name": "Scheduled Reports Plugin Replacement",
-
-    "namespace": "Stanford\\ScheduledReports",
-
-    "description": "This module will replace an old plugin to send scheduled reports from PID 9342",
-
-    "documentation": "README.md",
-
-    "framework-version": 12,
-
-    "authors": [
-        {
-            "name": "Ihab Zeedia",
-            "email": "ihab.zeedia@stanford.edu",
-            "institution": "Stanford University"
-        }
-    ],
-
-    "permissions": [
-
-    ],
-
-    "enable-every-page-hooks-on-system-pages": false,
-    "links": {
-        "project": [
-
-        ],
-        "control-center": [
-
-        ]
-    },
-
-    "no-auth-pages": [
-
-    ],
-
-    "project-settings": [
-
-    ],
-
-    "system-settings": [
-
-    ],
-
-    "crons": [
-        {
-            "cron_name": "sendScheduledReports",
-            "cron_description": "",
-            "method": "sendScheduledReportsCron",
-            "cron_frequency": "86400",
-            "cron_max_run_time": "300"
-        }
-
-    ],
-
-    "compatibility": {
-        "php-version-min": "",
-        "php-version-max": "",
-        "redcap-version-min": "",
-        "redcap-version-max": ""
+  "name": "Scheduled Reports Plugin Replacement",
+  "namespace": "Stanford\\ScheduledReports",
+  "description": "This module will replace an old plugin to send scheduled reports from PID 9342",
+  "documentation": "README.md",
+  "framework-version": 12,
+  "authors": [
+    {
+      "name": "Ihab Zeedia",
+      "email": "ihab.zeedia@stanford.edu",
+      "institution": "Stanford University"
     }
+  ],
+  "permissions": [
+  ],
+  "enable-every-page-hooks-on-system-pages": false,
+  "links": {
+    "project": [
+    ],
+    "control-center": [
+    ]
+  },
+  "no-auth-pages": [
+  ],
+  "project-settings": [
+  ],
+  "system-settings": [
+    {
+      "key": "records-pid",
+      "name": "REDCap Project Id where reports records are saved.",
+      "required": true,
+      "type": "project-id"
+    }
+  ],
+  "crons": [
+    {
+      "cron_name": "send_scheduled_reports",
+      "cron_description": "",
+      "method": "sendScheduledReportsCron",
+      "cron_frequency": "86400",
+      "cron_max_run_time": "300"
+    }
+  ],
+  "compatibility": {
+    "php-version-min": "",
+    "php-version-max": "",
+    "redcap-version-min": "",
+    "redcap-version-max": ""
+  }
 }
