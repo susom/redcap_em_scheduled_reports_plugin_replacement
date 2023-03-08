@@ -198,7 +198,6 @@ class Records
             return false;
         }
     }
-
     /**
      * @return Emails
      */
